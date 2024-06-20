@@ -1,0 +1,95 @@
+<mvc:View
+    controllerName="com.app.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns="sap.m"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <smartFilterBar:SmartFilterBar
+                id="smartFilterBar"
+                entitySet="Products"
+                persistencyKey="SmartFiter_Explored"
+            >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration1"
+                        key="ID"
+                        visibleInAdvancedArea="true"
+                    >
+                        <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption
+                                id="_IDGenSelectOption1"
+                                low="{  }"
+                            />
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration2"
+                        key="Name"
+                        visibleInAdvancedArea="true"
+                    >
+                        <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption
+                                id="_IDGenSelectOption2"
+                                low="{  }"
+                            />
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
+                </smartFilterBar:controlConfiguration>
+            </smartFilterBar:SmartFilterBar>
+            <smartTable:SmartTable
+                smartFilterId="smartFilterBar"
+                id="SmartTable"
+                initiallyVisibleFields="ID,Name,Description,ReleaseDate"
+                entitySet="Products"
+                editTogglable="true"
+                demandPopin="true"
+                app:useSmartToggle="true"
+                tableType="ResponsiveTable"
+                enableExport="true"
+                useVariantManagement="true"
+                useTablePersonalisation="true"
+                header="Product Table"
+                showRowCount="true"
+                persistencyKey="SmartTable_Explored"
+                enableAutoBinding="true"
+                enableAutoColumnWidth="true"
+                class="sapUiresponsiveContantPadding"
+            >
+                <Table
+                    id="idTable"
+                    mode="MultiSelect"
+                >
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar1">
+                            <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                            <Button
+                                id="_IDGenButton1"
+                                class="sapUiSmallMarginBeginEnd"
+                                type="Reject"
+                                icon="sap-icon://delete"
+                                text="Delete"
+                                press="onDelete"
+                            />
+                            <Button
+                                id="_IDGenButton2"
+                                class="sapUiSmallMarginBeginEnd"
+                                type="Accept"
+                                icon="sap-icon://add"
+                                text="Add"
+                                press="onAdd"
+                            />
+                        </OverflowToolbar>
+                    </headerToolbar>
+                </Table>
+            </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>

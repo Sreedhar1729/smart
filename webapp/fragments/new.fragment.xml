@@ -1,0 +1,96 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+  <Dialog
+        id="idEditBook"
+        resizable="true"
+        draggable="true"
+        contentWidth="30%"
+        title="Edit BOOK Details"
+    >
+        <beginButton>
+            <Button
+                id="idEditBookSave"
+                text="Save"
+                press="onSave"
+                type="Success"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="idEditBookCancel"
+                text="Cancel"
+                press="onClose"
+                type="Negative"
+            />
+        </endButton>
+        <content>
+            <!-- form creation -->
+            <form:SimpleForm
+                id="idEditBookForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+             <Label
+                    id="idEditBookID"
+                    text="ID"
+                />
+                <Input
+                    id="idEditBookIDVal"
+                    editable="true"
+                    valueLiveUpdate="true"
+                    value="{}"
+                />
+                <Label
+                    id="idEditBookISBN"
+                    text="ISBN"
+                />
+                <Input
+                    id="idEditBookISBNVal"
+                    editable="true"
+                    valueLiveUpdate="true"
+                    value="{}"
+                />
+
+                <Label
+                    id="idEditBookTitle"
+                    text="Title"
+                />
+                <Input
+                    id="idEditBookTitleVal"
+                    editable="true"
+                    valueLiveUpdate="true"
+                
+                />
+                <Label
+                    id="idEditBookQty"
+                    text="Qty"
+                />
+                <Input
+                    id="idEditBookQtyVal"
+                    type="Date"
+                    editable="true"
+                    valueLiveUpdate="true"
+                
+                /> 
+ 
+            </form:SimpleForm>
+        </content>
+    </Dialog>
+
+</core:FragmentDefinition>
